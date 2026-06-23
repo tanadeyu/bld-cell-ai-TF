@@ -122,8 +122,6 @@ docker build -t tf-rocm-bloodcell .
 
 ---
 
-## 結果（TF版 vs PyTorch版）
-
 ### TF版 学習曲線
 
 **ResNet18 (finetuning)**
@@ -142,6 +140,7 @@ docker build -t tf-rocm-bloodcell .
 
 ![ViT feature_extraction](images/vit_b16_learning_curve_feature_extraction.png)
 
+## 結果（TF版 vs PyTorch版）
 ### TensorFlow (ROCm 7.2 / RX 7900 XT)
 
 | モデル | アプローチ | Accuracy | F1 | 学習時間 | VRAM |
