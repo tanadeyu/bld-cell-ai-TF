@@ -160,6 +160,24 @@ docker build -t tf-rocm-bloodcell .
 
 ![PyTorch版混同行列](images/pt_cm.png)
 
+### TF版 学習曲線
+
+**ResNet18 (finetuning)**
+
+![ResNet18 finetuning](images/resnet18_learning_curve_finetuning.png)
+
+**ResNet18 (feature_extraction)**
+
+![ResNet18 feature_extraction](images/resnet18_learning_curve_feature_extraction.png)
+
+**ViT-B/16 (finetuning)**
+
+![ViT finetuning](images/vit_b16_learning_curve_finetuning.png)
+
+**ViT-B/16 (feature_extraction)**
+
+![ViT feature_extraction](images/vit_b16_learning_curve_feature_extraction.png)
+
 ---
 
 ## 注意事項
