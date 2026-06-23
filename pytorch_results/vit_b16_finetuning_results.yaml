@@ -1,0 +1,12 @@
+model: ViT-B/16
+approach: finetuning
+test_accuracy: 0.8877521192633733
+test_f1: 0.802672147995889
+training_time: 994.7465400695801
+training_time_minutes: 16.57910900115967
+epochs: 10
+confusion_matrix:
+- - 2256
+  - 275
+- - 109
+  - 781

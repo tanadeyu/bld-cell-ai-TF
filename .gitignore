@@ -1,0 +1,44 @@
+# Data files
+data/*.npz
+data/*.h5
+data/*.npy
+data/*.csv
+# Model files (too large for GitHub)
+models/*.npz
+models/*.h5
+models/*.keras
+models/*.pth
+models/*.pt
+models/*.pkl
+models/saved_model/
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+dist/
+build/
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+# OS
+.DS_Store
+Thumbs.db
+# Virtual environment
+venv/
+env/
+ENV/
+.conda/
+# Logs
+*.log
+# Results cache
+*.cache
+# pi local memory
+.pi-gl-mem/

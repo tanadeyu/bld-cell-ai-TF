@@ -1,0 +1,15 @@
+model: ResNet18
+approach: feature_extraction
+test_accuracy: 0.8383513592516808
+test_f1: 0.6519823788546255
+confusion_matrix:
+- - 2350
+  - 181
+- - 372
+  - 518
+training_time_minutes: 0.8
+epochs: 10
+batch_size: 64
+learning_rate: 0.001
+pretrained: true
+framework: TensorFlow 2.10 + DirectML

@@ -1,0 +1,15 @@
+model: ResNet18
+approach: finetuning
+test_accuracy: 0.9348143817597194
+test_f1: 0.8814460393407761
+confusion_matrix:
+- - 2369
+  - 162
+- - 61
+  - 829
+training_time_minutes: 2.3
+epochs: 10
+batch_size: 64
+learning_rate: 0.001
+pretrained: true
+framework: TensorFlow 2.10 + DirectML

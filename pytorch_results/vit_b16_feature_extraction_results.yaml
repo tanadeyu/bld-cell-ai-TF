@@ -1,0 +1,12 @@
+model: ViT-B/16
+approach: feature_extraction
+test_accuracy: 0.8886290558316282
+test_f1: 0.7872696817420436
+training_time: 356.33204221725464
+training_time_minutes: 5.938867370287578
+epochs: 10
+confusion_matrix:
+- - 2335
+  - 196
+- - 185
+  - 705

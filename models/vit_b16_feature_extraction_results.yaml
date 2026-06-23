@@ -1,0 +1,15 @@
+model: ViT-B16
+approach: feature_extraction
+test_accuracy: 0.7614732534346682
+test_f1: 0.20930232558139536
+confusion_matrix:
+- - 2497
+  - 34
+- - 782
+  - 108
+training_time_minutes: 6.4
+epochs: 10
+batch_size: 64
+learning_rate: 0.0005
+pretrained: true
+framework: TensorFlow 2.10 + DirectML

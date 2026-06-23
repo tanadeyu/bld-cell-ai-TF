@@ -1,0 +1,12 @@
+model: ResNet18
+approach: feature_extraction
+test_accuracy: 0.7895352236188249
+test_f1: 0.5749704840613932
+training_time: 44.331056118011475
+training_time_minutes: 0.7388509353001912
+epochs: 10
+confusion_matrix:
+- - 2214
+  - 317
+- - 403
+  - 487

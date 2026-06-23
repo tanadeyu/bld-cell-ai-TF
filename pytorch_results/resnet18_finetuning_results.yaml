@@ -1,0 +1,12 @@
+model: ResNet18
+approach: finetuning
+test_accuracy: 0.9555685472084186
+test_f1: 0.9139297848244621
+training_time: 49.54086256027222
+training_time_minutes: 0.8256810426712036
+epochs: 10
+confusion_matrix:
+- - 2462
+  - 69
+- - 83
+  - 807

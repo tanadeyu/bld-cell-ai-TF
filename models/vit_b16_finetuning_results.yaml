@@ -1,0 +1,15 @@
+model: ViT-B16
+approach: finetuning
+test_accuracy: 0.9061677871967261
+test_f1: 0.8304278922345484
+confusion_matrix:
+- - 2314
+  - 217
+- - 104
+  - 786
+training_time_minutes: 20.0
+epochs: 10
+batch_size: 64
+learning_rate: 0.0005
+pretrained: true
+framework: TensorFlow 2.10 + DirectML
