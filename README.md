@@ -212,16 +212,15 @@ PyTorch + CUDA（RTX 3060）のコードを TensorFlow + ROCm（RX 7900 XT）に
 | ResNet18 finetuning | 93.5%（PyTorch比 -2.1%） |
 | ViT-B/16 finetuning | 90.6%（PyTorch比 +1.8%） |
 
-### 判明した制約
+### 総評
 
-1. **XLA JIT 使用不可**: ROCm 7.2 + gfx1100 ではGEMM autotune / Conv2D workspaceのバグで使用できず。XLA無効が安定。
-2. **NaN問題**: TFのmixed_float16はGradScaler非対応のため、学習率調整（0.0005）で回避が必要。
-3. **VRAM効率**: PyTorch + CUDA比で約3倍のVRAMを使用。
-4. **PCクラッシュ防止**: VRAM一括確保を防ぐ設定（`growth=true`, `memory_limit`, Docker制限）が必須。
+**精度はほぼ互角。** ResNet18・ViTとも誤差範囲内（±2%）で、実用上の差はない。
 
-### 所感
+**速度も大きな差はない。** ResNet18ではPyTorchが3倍速いが、どちらも数分で完了するため実用的に問題にならない。ViTではほぼ同等。
 
-AMD ROCm環境でのTensorFlow動作は実用可能だが、XLA JITやメモリ管理の面でCUDA環境より安定性・効率が劣る。特にGPUの演算特性に起因する問題が複数あり、同一コードの完全な互換動作には至らなかった。PyTorch + CUDAの開発体験の完成度を実感する結果となった。
+**決定的な差はVRAM効率と安定性。** PyTorch + CUDA（5.74GB）に対し、TF + ROCmは約3倍（17GB）のVRAMを消費する。また、XLA JITはROCm 7.2 + gfx1100でGEMM autotuneとConv2D workspaceのバグにより使用不可となり、TF本来の高速化機構を活かせなかった。mixed_float16でもGradScaler非対応のため学習率調整が必要であり、全体的に「動かすための回避策」が多数必要だった。
+
+**結論として、同一タスクを解くだけであればどちらのフレームワークでも問題ない。** しかし、セットアップの簡便さ・メモリ効率・ライブラリの安定性においてはPyTorch + CUDA（NVIDIA GPU）の完成度が依然として高い。本プロジェクトは、AMD ROCm環境でTensorFlowを動かす際の現実的な制約と回避策を示すケーススタディとなった。
 
 ### 注意・免責事項
 
